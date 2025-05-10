@@ -11,7 +11,7 @@
 
 ## for what
 
-- this project used to github golang lib project
+- `embed.FS` from an embedded subdirectory to the filesystemt
 
 ## Contributing
 
@@ -29,19 +29,6 @@ Please read [Contributor Guide](.github/CONTRIBUTING_DOC/CONTRIBUTING.md) for mo
 in go mod project
 
 ```bash
-# warning use private git host must set
-# global set for once
-# add private git host like github.com to evn GOPRIVATE
-$ go env -w GOPRIVATE='github.com'
-# use ssh proxy
-# set ssh-key to use ssh as http
-$ git config --global url."git@github.com:".insteadOf "https://github.com/"
-# or use PRIVATE-TOKEN
-# set PRIVATE-TOKEN as gitlab or gitea
-$ git config --global http.extraheader "PRIVATE-TOKEN: {PRIVATE-TOKEN}"
-# set this rep to download ssh as https use PRIVATE-TOKEN
-$ git config --global url."ssh://github.com/".insteadOf "https://github.com/"
-
 # before above global settings
 # test version info
 $ git ls-remote -q https://github.com/sinlov-go/sembed.git
@@ -55,6 +42,9 @@ $ echo "go mod vendor"
 
 ## Features
 
+- [x] `embed.FS` from an embedded subdirectory to the filesystem
+- [x] Handy CopyFile(sourcePath string, target string, perm os.FileMode, coverage bool) method to copy an embedded file
+  to the filesystem
 - [ ] more perfect test case coverage
 - [ ] more perfect benchmark case
 
@@ -69,10 +59,7 @@ $ echo "go mod vendor"
 
 ## usage
 
-- use this template, replace list below
-    - `github.com/sinlov-go/sembed` to your package name
-    - `sinlov-go` to your owner name
-    - `sembed` to your project name
+- see [example_test](example/example_test.go)
 
 ## dev
 
